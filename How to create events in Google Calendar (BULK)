@@ -1,0 +1,12 @@
+function createCalEvent(){
+  const ss = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1")
+  const data = ss.getRange("A2:C");
+  const events  = data.getValues();
+  const calendar = CalendarApp.getDefaultCalendar();
+
+  events.forEach(function (events){
+    if(events[0]){
+      calendar.createEvent(event[0], new Date(events[1]), new Date(events[2]))
+    }
+  })
+}
